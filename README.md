@@ -13,6 +13,8 @@ list of modules:
   4.speech_recognition
 ```
 
+## List of install packages
+
 Update your system :
 ```
 sudo apt update && sudo apt upgrade
@@ -34,7 +36,7 @@ Install speech_recognition
 pip install SpeechRecognition
 ```
 
-##API 
+## API 
 
 Using Festival API in this project.
 
