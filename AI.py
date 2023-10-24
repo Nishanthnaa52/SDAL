@@ -31,6 +31,7 @@ def r_voice():
     try:
         print("wait...")
         query=r.recognize_google(audio,language="en-in")
+        os.system("clear")
         print("user side : ",query)
         file_read(query)
 
