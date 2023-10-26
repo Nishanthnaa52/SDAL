@@ -31,7 +31,6 @@ def r_voice():
     try:
         print("wait...")
         query=r.recognize_google(audio,language="en-in")
-        os.system("clear")
         print("user side : ",query)
         file_read(query)
 
@@ -67,3 +66,11 @@ if __name__ == "__main__":
             speak("According to wikipedia")
             speak(results)
             
+        if "youtube" in query:
+            speak("opening youtube...")
+            query=query.replace("youtube","")
+            query=query.replace(" ","")
+            os.system("google-chrome youtube.com/results?search_query=%s"%(query))
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
