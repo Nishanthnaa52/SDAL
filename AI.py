@@ -52,13 +52,13 @@ def welcome():
 
 if __name__ == "__main__":
     welcome()
-    condition = True
-    while condition:
+    
+    while True:
         query=r_voice().lower()
 
         if "goodbye" in query:
             speak("Good bye sir...")
-            condition = False
+            break
 
         if "wikipedia" in query:
             speak("searching in wikipedia")
