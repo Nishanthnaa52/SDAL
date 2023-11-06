@@ -53,8 +53,12 @@ if __name__ == "__main__":
     welcome()
     
     while True:
-        query=r_voice().lower()
-
+        query=r_voice()
+        if query == None:
+            continue    
+        
+        query.lower()
+        
         if "goodbye" in query:
             speak("Good bye sir...")
             break
@@ -71,6 +75,14 @@ if __name__ == "__main__":
             query=query.replace("youtube","")
             query=query.replace(" ","")
             os.system("google-chrome youtube.com/results?search_query=%s"%(query))
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        if "open" in query:
+            query=query.replace("open","")
+            query=query.replace(" ","")
+            os.system("google-chrome google.com/search?q=%s"%(query))
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
                 break
