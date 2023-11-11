@@ -8,6 +8,8 @@ import speech_recognition as sp
 import sounddevice
 import datetime
 import wikipedia
+import webbrowser
+import pywhatkit as yt
 
 #Every time clear the screen.
 os.system("clear")
@@ -64,6 +66,7 @@ if __name__ == "__main__":
     welcome()
     
     while True:
+
         query=r_voice()
         if query == None:
             continue    
@@ -74,34 +77,43 @@ if __name__ == "__main__":
             speak("Good bye thank for using me...")
             break
 
-        elif "search" in query:
+        if "search" in query:
             query=query.replace("search","")
             query=query.replace(" ","")
-            os.system("google-chrome google.com/search?q=%s"%(query))
+            webbrowser.open(f"google.com/search?q={query}")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+        
+        if "open" in query:
+            query=query.replace("open","")
+            query=query.replace(" ","")
+            speak(f"opening {query}...")
+            webbrowser.open(f"{query}.com")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+        
+        if "youtube" in query:
+            speak("opening youtube...")
+            query=query.replace("youtube","")
+            query=query.replace(" ","")
+            webbrowser.open(f"youtube.com/results?search_query={query}")
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
                 break
 
-        elif "nishanth" in query:
-            speak("Nishanth is on")
-            os.system("google-chrome github.com/nishanthnaa52")
-            condition = input("Are you continue (Y/N):").lower()
-            if(condition == 'n'):
-                break
-
-
-        elif "wikipedia" in query:
+        if "wikipedia" in query:
             speak("searching in wikipedia")
             query=query.replace("wikipedia","")
             results=wikipedia.summary(query,sentences=3)
             speak("According to wikipedia")
             speak(results)
-            
-        elif "youtube" in query:
-            speak("opening youtube...")
-            query=query.replace("youtube","")
-            query=query.replace(" ","")
-            os.system("google-chrome youtube.com/results?search_query=%s"%(query))
+
+        if "play song" in query:
+            speak("Starting...")
+            query=query.replace("play song","")
+            yt.playonyt(query)
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
                 break
