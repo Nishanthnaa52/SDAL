@@ -48,7 +48,7 @@ install webbrowser. it is opening browser and search something.
 ```
 pip install webbrowser
 ```
-install pywhatkit. it is use to play yuotube video's automatically.
+install pywhatkit. it is use to play youtube video's automatically.
 ```
 pip install pywhatkit
 ```
