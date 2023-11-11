@@ -6,7 +6,7 @@ This is my Basics AI Project.
 
 I used many modules in python. it's full python based basics AI Projesct or Desktop assistant.
 
-The all packages is FREE...
+The all packages are FREE...
 ```
 list of modules:
   1.os
