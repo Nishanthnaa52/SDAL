@@ -77,7 +77,43 @@ if __name__ == "__main__":
             speak("Good bye thank for using me...")
             break
 
-        if "search" in query:
+        elif "open vs code" in query:
+            os.system("code")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "open chrome" in query:
+            os.system("google-chrome")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "open camera" in query:
+            os.system("cheese")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "text editor" in query:
+            os.system("gedit")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "open folder" in query:
+            os.system("open /nishanth-path")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+        
+        elif "open vlc" in query:
+            os.system("vlc")
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "search" in query:
             query=query.replace("search","")
             query=query.replace(" ","")
             webbrowser.open(f"google.com/search?q={query}")
@@ -85,16 +121,7 @@ if __name__ == "__main__":
             if(condition == 'n'):
                 break
         
-        if "open" in query:
-            query=query.replace("open","")
-            query=query.replace(" ","")
-            speak(f"opening {query}...")
-            webbrowser.open(f"{query}.com")
-            condition = input("Are you continue (Y/N):").lower()
-            if(condition == 'n'):
-                break
-        
-        if "youtube" in query:
+        elif "youtube" in query:
             speak("opening youtube...")
             query=query.replace("youtube","")
             query=query.replace(" ","")
@@ -103,17 +130,26 @@ if __name__ == "__main__":
             if(condition == 'n'):
                 break
 
-        if "wikipedia" in query:
+        elif "wikipedia" in query:
             speak("searching in wikipedia")
             query=query.replace("wikipedia","")
             results=wikipedia.summary(query,sentences=3)
             speak("According to wikipedia")
             speak(results)
 
-        if "play song" in query:
+        elif "play" in query:
             speak("Starting...")
-            query=query.replace("play song","")
+            query=query.replace("play","")
             yt.playonyt(query)
+            condition = input("Are you continue (Y/N):").lower()
+            if(condition == 'n'):
+                break
+
+        elif "open" in query:
+            query=query.replace("open","")
+            query=query.replace(" ","")
+            speak(f"opening {query}...")
+            webbrowser.open(f"{query}.com")
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
                 break
