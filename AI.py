@@ -118,7 +118,6 @@ if __name__ == "__main__":
 
         elif "search" in query:
             query=query.replace("search","")
-            query=query.replace(" ","")
             webbrowser.open(f"google.com/search?q={query}")
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
@@ -179,4 +178,26 @@ if __name__ == "__main__":
         elif "wait" in query:
             speak("Waiting... 30 second")
             time.sleep(30)
-            
+            speak("Say your command...")
+
+        elif "write" in query:
+            speak("Starting...")
+            key.press('win')
+            time.sleep(2)
+            key.write('gedit')
+            time.sleep(2)
+            key.press('enter')
+            time.sleep(3)
+            speak("Speak what you write....")
+            content = r_voice()
+            time.sleep(3)
+            key.write(content)
+            speak("completed...")
+
+        elif "save" in query:
+            with key.hold('ctrl'):
+                key.press('s')
+            key.press('enter')
+
+        elif "clear screen" in query:
+            os.system('clear')

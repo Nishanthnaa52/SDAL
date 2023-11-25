@@ -16,6 +16,8 @@ list of modules:
   5.wikipedia
   6.webbrowser
   7.pywhatkit
+  8.pyautogui
+  9.time
 ```
 
 ## List of install packages
@@ -34,7 +36,7 @@ pip install datetime
 ```
 Install sounddevice module :
 ```
-pip install sonddevice
+pip install sounddevice
 ```
 Install speech_recognition
 ```
@@ -51,6 +53,14 @@ pip install webbrowser
 install pywhatkit. it is use to play youtube video's automatically.
 ```
 pip install pywhatkit
+```
+install time. 
+```
+pip install time
+```
+install pyautogui. it's control mouse and keyboard.
+```
+pip install pyautogui
 ```
 
 ## API 
