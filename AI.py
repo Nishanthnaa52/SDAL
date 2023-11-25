@@ -1,21 +1,24 @@
-#developed by Nishath and team.
+#Developed by Nishath and team.
 
 #This projects is based on the Simple AI(SA) (or) Simple Desktop Assistant(SDA).
 
-#below the imparted python modules read a READE.md and step by step install.
+#Below the imparted python modules read a READE.md and step by step install.
+
 import os
+import time
 import speech_recognition as sp
 import sounddevice
 import datetime
 import wikipedia
 import webbrowser
 import pywhatkit as yt
+import pyautogui as key
 
 #Every time clear the screen.
 os.system("clear")
 
 
-#voice recognise function.
+#Voice recognise function.
 def r_voice():
     r=sp.Recognizer()
     with sp.Microphone() as mp:
@@ -53,12 +56,12 @@ def speak(audio):
 def welcome():
     hour = int(datetime.datetime.now().hour)
     if(hour >= 1 and hour < 12):
-        speak("Good morning  ")
+        speak("Good morning sir...")
     elif(hour >= 12 and hour < 4):
-        speak("Good afternoon  ")
+        speak("Good afternoon...")
     else:
-        speak("Good evening  ")
-    speak("How can i help you  ")
+        speak("Good evening...")
+    speak("I am jarvis. How can i help you ?")
 
 
 #Main function.
@@ -153,3 +156,27 @@ if __name__ == "__main__":
             condition = input("Are you continue (Y/N):").lower()
             if(condition == 'n'):
                 break
+
+        elif "update" in query:
+            speak("Updateing...")
+            with key.hold('win'):
+                key.press('t')
+            time.sleep(3)
+            key.write('sudo apt update && sudo apt upgrade')
+            key.press('enter')
+            key.write('nishanth_')
+            key.press('enter')
+            time.sleep(15)
+            key.write('n')
+            key.press('enter')
+            speak("Completed...")
+
+        elif "close" in query:
+            with key.hold('win'):
+                key.press('q')
+            speak("Closed...")
+
+        elif "wait" in query:
+            speak("Waiting... 30 second")
+            time.sleep(30)
+            
