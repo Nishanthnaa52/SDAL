@@ -50,7 +50,11 @@ def speak(audio):
     file_read(audio)
     os.system("cat read.txt | festival --tts")
     os.remove("read.txt")
-        
+
+def kill_terminal():
+    key.write("exit")
+    key.press('enter')
+
     
 #Find a time a welcome you function.     
 def welcome():
@@ -66,6 +70,7 @@ def welcome():
 
 #Main function.
 if __name__ == "__main__":
+
     welcome()
     
     while True:
@@ -201,3 +206,16 @@ if __name__ == "__main__":
 
         elif "clear screen" in query:
             os.system('clear')
+        
+        elif "power of" in query:
+            key.click(1134,0)
+            time.sleep(1)
+            key.click(1068,367)
+            time.sleep(1)
+            key.click(1158,487)
+            time.sleep(1)
+            key.press('right')
+            key.press('enter')
+
+kill_terminal()
+
