@@ -65,7 +65,7 @@ def welcome():
         speak("Good afternoon...")
     else:
         speak("Good evening...")
-    speak("I am jarvis. How can i help you ?")
+    speak("I am S.D.A.L. How can i help you ?")
 
 
 #Main function.
@@ -218,4 +218,3 @@ if __name__ == "__main__":
             key.press('enter')
 
 kill_terminal()
-
