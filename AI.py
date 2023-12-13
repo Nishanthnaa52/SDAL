@@ -22,7 +22,7 @@ os.system("clear")
 def r_voice():
     r=sp.Recognizer()
     with sp.Microphone() as mp:
-        print("Recogning...")
+        print("Hearing...")
         r.pause_threshold=0.8
         audio=r.listen(mp)
     
