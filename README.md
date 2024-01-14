@@ -3,11 +3,10 @@
 > [!NOTE]  
 > This project only for linux user's not support for windows.
 
-This is my Basics AI Project.
+This is my Basics desktop assistant Project.
 
-I used many modules in python. it's full python based basics AI Projesct or Desktop assistant.
+I used many modules in this project. it's full python based basics disktop assistant Projesct.
 
-The all packages are FREE...
 ```
 list of modules:
   1.os
