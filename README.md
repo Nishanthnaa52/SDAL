@@ -20,47 +20,15 @@ list of modules:
   9.time
 ```
 
-## List of install packages
+## How to install package's
 
-Update your system :
+Run this comment
 ```
-sudo apt update && sudo apt upgrade
+cd SDAL
 ```
-Install OS module :
+
 ```
-pip install os
-```
-Install datetime module :
-```
-pip install datetime
-```
-Install sounddevice module :
-```
-pip install sounddevice
-```
-Install speech_recognition
-```
-pip install SpeechRecognition
-```
-install wikipedia. it is get a data from wikipedia and display.
-```
-pip install wikipedia
-```
-install webbrowser. it is opening browser and search something.
-```
-pip install webbrowser
-```
-install pywhatkit. it is use to play youtube video's automatically.
-```
-pip install pywhatkit
-```
-install time. 
-```
-pip install time
-```
-install pyautogui. it's control mouse and keyboard.
-```
-pip install pyautogui
+pip install -r requirement.txt
 ```
 
 ## API 
