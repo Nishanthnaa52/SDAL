@@ -1,7 +1,7 @@
 # PROJECT_AI
 
 > [!NOTE]  
-> This project only for linux users Windows not support.
+> This project only for linux user's not support for windows.
 
 This is my Basics AI Project.
 
