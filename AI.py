@@ -13,10 +13,15 @@ import wikipedia
 import webbrowser
 import pywhatkit as yt
 import pyautogui as key
+from tkinter import *
+import customtkinter as ctk 
+from PIL import Image, ImageTk
 
 #Every time clear the screen.
 os.system("clear")
 
+
+#GUI application function.
 
 #Voice recognise function.
 def r_voice():
@@ -71,10 +76,100 @@ def welcome():
 #Main function.
 if __name__ == "__main__":
 
-    welcome()
     
-    while True:
+    ctk.set_default_color_theme('./themes/dark-blue.json')
 
+    root = ctk.CTk()
+
+    #set a screen width, height.
+    screen_width = 500
+    screen_heigth = 500
+
+    #set some window element.
+    root.geometry(f"{screen_width}x{screen_heigth}")
+    root.title("SDAL")
+
+    #function seting section.
+    def callback(event):
+        webbrowser.open_new(event.widget.cget("text"))
+
+    def GUI_text(query):
+        info_label.configure(text=query)       
+
+    voice_icon = ctk.CTkImage(
+                            light_image=Image.open('./image/voice_icon.png'), 
+                            dark_image=Image.open('./image/voice_icon.png'), 
+                            size=(80, 100 )
+                        )
+
+    main_table = ctk.CTkTabview(
+                            master=root,
+                            width=400, 
+                            height=400, 
+                            corner_radius=10
+                        )
+    main_table.pack()
+    main_table.add("Home")
+    main_table.add("About")
+    main_table.set('Home')
+
+    button = ctk.CTkButton(
+                            master=main_table.tab('Home'), 
+                            text='', 
+                            image=voice_icon, 
+                            anchor='center', 
+                            width=150,
+                            height=150,
+                            command=r_voice
+                            ) 
+    button.pack(pady=10)
+    query=button
+
+    About_label = ctk.CTkLabel(
+                            master=main_table.tab('About'),
+                            text='''
+    This is my Basics desktop assistant Project.
+
+    I used many modules in this project. 
+    it's full python based basics disktop assistant Projesct.
+
+    list of modules:
+    1.os
+    2.datetime
+    3.sounddevice
+    4.speech_recognition
+    5.wikipedia
+    6.webbrowser
+    7.pywhatkit
+    8.pyautogui
+    9.time
+
+    More check below and get source code
+
+    '''
+                            ,).pack()
+
+    link_label = ctk.CTkLabel(master=main_table.tab("About"), text=r"https://github.com/Nishanthnaa52/SDAL", text_color="blue", cursor="hand2")
+    link_label.pack()
+    link_label.bind("<Button-1>", callback)
+
+
+    exit_button = ctk.CTkButton(master=root, text='EXIT', command=root.destroy)
+    exit_button.pack(pady=20)
+
+    text = open('./read.txt', 'r')
+    info_label = ctk.CTkLabel(master=main_table.tab("Home"), text=f'''{text}''', font=("Arial", 20))
+    info_label.pack(pady=20)
+    root.mainloop()
+
+
+
+
+
+
+    while False:
+
+        welcome()
         query=r_voice()
         if query == None:
             continue    
@@ -217,4 +312,4 @@ if __name__ == "__main__":
             key.press('right')
             key.press('enter')
 
-kill_terminal()
+#kill_terminal()
