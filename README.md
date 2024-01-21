@@ -43,3 +43,7 @@ Checking :
 ```
 echo "successfully complete" | fesitval --tts
 ```
+
+## LICENSE
+
+[The License](https://github.com/Nishanthnaa52/SDAL/blob/main/LICENSE.txt)
