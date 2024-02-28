@@ -303,11 +303,12 @@ if __name__ == "__main__":
             os.system('clear')
         
         elif "power of" in query:
+            time.sleep(1)
             key.click(1134,0)
             time.sleep(1)
-            key.click(1068,367)
+            key.click(1128,336)
             time.sleep(1)
-            key.click(1158,487)
+            key.click(1152,445)
             time.sleep(1)
             key.press('right')
             key.press('enter')
