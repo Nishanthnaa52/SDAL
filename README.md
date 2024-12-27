@@ -31,11 +31,11 @@ cd SDAL
 pip install -r requirement.txt
 ```
 
-## API 
+## CLI Tool
 
-Using Festival API in this project.
+Using Festival tool in this project.
 
-Install Festival AIP tool :
+Install Festival tool :
 ```
 sudo apt-get install festival
 ```
